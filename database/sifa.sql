@@ -1,14 +1,13 @@
 -- phpMyAdmin SQL Dump
--- version 5.1.1
+-- version 4.6.6deb5ubuntu0.5
 -- https://www.phpmyadmin.net/
 --
--- Host: 127.0.0.1
--- Waktu pembuatan: 18 Des 2021 pada 21.30
--- Versi server: 10.4.21-MariaDB
--- Versi PHP: 8.0.12
+-- Host: localhost:3306
+-- Generation Time: 10 Jun 2022 pada 19.03
+-- Versi Server: 5.7.38-0ubuntu0.18.04.1
+-- PHP Version: 7.2.34-28+ubuntu18.04.1+deb.sury.org+1
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-START TRANSACTION;
 SET time_zone = "+00:00";
 
 
@@ -121,10 +120,7 @@ CREATE TABLE `ibuhamil` (
 --
 
 INSERT INTO `ibuhamil` (`id`, `name`, `tgl_lahir`, `jk_id`, `alamat`, `no_hp`) VALUES
-(1, 'Soraya', '2001-04-12', 1, 'jl. Kemuning', '02147483647'),
-(2, 'Anggita', '1995-12-15', 1, 'jl. Mastrip', '02147483647'),
 (3, 'Adinda Ajeng', '2018-11-01', 1, 'jl. Mastrip', '081249079110'),
-(4, 'Anggita', '2000-09-09', 1, 'jl. Mastrip', '081249079110'),
 (5, 'Kepala Puskesmas', '2018-11-15', 1, 'Lumajang', '08136842972');
 
 -- --------------------------------------------------------
@@ -592,10 +588,10 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `ip_address`, `username`, `password`, `email`, `activation_selector`, `activation_code`, `forgotten_password_selector`, `forgotten_password_code`, `forgotten_password_time`, `remember_selector`, `remember_code`, `created_on`, `last_login`, `active`, `first_name`, `last_name`, `phone`, `image`, `address`, `nip`) VALUES
-(1, '127.0.0.1', 'admin@fixl.com', '$2y$12$XpBgMvQ5JzfvN3PTgf/tA.XwxbCOs3mO0a10oP9/11qi1NUpv46.u', 'admin@fixl.com', NULL, '', NULL, NULL, NULL, NULL, NULL, 1268889823, 1639727405, 1, 'Admin', 'Ajeng', '081342989185', 'USER_1_1638272930.jpg', 'admin', NULL),
-(13, '::1', 'uadmin@gmail.com', '$2y$10$78SZyvKRKMU7nPCew9w4nOpEUmJ1SeTV4L4ZG2NXXSfbEaswqoepq', 'uadmin@gmail.com', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1568678256, 1639666839, 1, 'User Admin', 'Kader', '00', 'USER_13_1639103000.png', 'jln mutiara no 8', NULL),
+(1, '127.0.0.1', 'admin@fixl.com', '$2y$12$XpBgMvQ5JzfvN3PTgf/tA.XwxbCOs3mO0a10oP9/11qi1NUpv46.u', 'admin@fixl.com', NULL, '', NULL, NULL, NULL, NULL, NULL, 1268889823, 1654858650, 1, 'Admin', 'Ajeng', '081342989185', 'USER_1_1638272930.jpg', 'admin', NULL),
+(13, '::1', 'uadmin@gmail.com', '$2y$10$78SZyvKRKMU7nPCew9w4nOpEUmJ1SeTV4L4ZG2NXXSfbEaswqoepq', 'uadmin@gmail.com', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1568678256, 1654858627, 1, 'User Admin', 'Kader', '00', 'USER_13_1639103000.png', 'jln mutiara no 8', NULL),
 (14, '::1', 'kepala@gmail.com', '$2y$10$Un1PLu68UHwSBfkT/8oa1.Z1bdwuJehfzaMrx5y3TWeR.2kPfIg7a', 'kepala@gmail.com', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1572856687, 1639667716, 1, 'Kepala', 'Puskesmas', '081234567890', 'default.jpg', 'Jalan', NULL),
-(15, '::1', 'bidan@gmail.com', '$2y$10$8fJac0Hyx55d9OxLOL8BK.iJ8toU0pwoZL7YeUBf8YEm4GmdVpaRy', 'bidan@gmail.com', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1572857608, 1639849464, 1, 'User', 'Bidan', '08123', 'USER_15_1638268815.png', 'Jalan', NULL),
+(15, '::1', 'bidan@gmail.com', '$2y$10$8fJac0Hyx55d9OxLOL8BK.iJ8toU0pwoZL7YeUBf8YEm4GmdVpaRy', 'bidan@gmail.com', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1572857608, 1640182212, 1, 'User', 'Bidan', '08123', 'USER_15_1638268815.png', 'Jalan', NULL),
 (16, '::1', 'adindaajeng61@gmail.com', '$2y$10$AbvcI96VROUogkTbs4y8LOcT6zS2RBjEuyl28OjdV0xDpazQjkmom', 'adindaajeng61@gmail.com', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1639586794, 1639587082, 1, 'Adinda', 'Ajeng', '081249079110', 'default.jpg', 'jl. Mastrip', NULL);
 
 -- --------------------------------------------------------
@@ -626,19 +622,19 @@ INSERT INTO `users_groups` (`id`, `user_id`, `group_id`) VALUES
 --
 
 --
--- Indeks untuk tabel `balita`
+-- Indexes for table `balita`
 --
 ALTER TABLE `balita`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indeks untuk tabel `category`
+-- Indexes for table `category`
 --
 ALTER TABLE `category`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indeks untuk tabel `doctor_specialist`
+-- Indexes for table `doctor_specialist`
 --
 ALTER TABLE `doctor_specialist`
   ADD PRIMARY KEY (`id`),
@@ -646,31 +642,31 @@ ALTER TABLE `doctor_specialist`
   ADD KEY `user_id` (`user_id`);
 
 --
--- Indeks untuk tabel `groups`
+-- Indexes for table `groups`
 --
 ALTER TABLE `groups`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indeks untuk tabel `ibuhamil`
+-- Indexes for table `ibuhamil`
 --
 ALTER TABLE `ibuhamil`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indeks untuk tabel `imunisasibalita`
+-- Indexes for table `imunisasibalita`
 --
 ALTER TABLE `imunisasibalita`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indeks untuk tabel `imunisasiibu`
+-- Indexes for table `imunisasiibu`
 --
 ALTER TABLE `imunisasiibu`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indeks untuk tabel `item`
+-- Indexes for table `item`
 --
 ALTER TABLE `item`
   ADD PRIMARY KEY (`id`),
@@ -679,69 +675,69 @@ ALTER TABLE `item`
   ADD KEY `rule_id` (`rule_id`);
 
 --
--- Indeks untuk tabel `jadwalbalita`
+-- Indexes for table `jadwalbalita`
 --
 ALTER TABLE `jadwalbalita`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indeks untuk tabel `jadwalibu`
+-- Indexes for table `jadwalibu`
 --
 ALTER TABLE `jadwalibu`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indeks untuk tabel `jeniskegiatan`
+-- Indexes for table `jeniskegiatan`
 --
 ALTER TABLE `jeniskegiatan`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indeks untuk tabel `jk`
+-- Indexes for table `jk`
 --
 ALTER TABLE `jk`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indeks untuk tabel `laporan`
+-- Indexes for table `laporan`
 --
 ALTER TABLE `laporan`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indeks untuk tabel `login_attempts`
+-- Indexes for table `login_attempts`
 --
 ALTER TABLE `login_attempts`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indeks untuk tabel `medicine`
+-- Indexes for table `medicine`
 --
 ALTER TABLE `medicine`
   ADD PRIMARY KEY (`id`),
   ADD KEY `category_id` (`category_id`);
 
 --
--- Indeks untuk tabel `menus`
+-- Indexes for table `menus`
 --
 ALTER TABLE `menus`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indeks untuk tabel `patient`
+-- Indexes for table `patient`
 --
 ALTER TABLE `patient`
   ADD PRIMARY KEY (`id`),
   ADD KEY `patient_group_id` (`patient_group_id`);
 
 --
--- Indeks untuk tabel `patient_group`
+-- Indexes for table `patient_group`
 --
 ALTER TABLE `patient_group`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indeks untuk tabel `pemeriksaanbalita`
+-- Indexes for table `pemeriksaanbalita`
 --
 ALTER TABLE `pemeriksaanbalita`
   ADD PRIMARY KEY (`id`),
@@ -750,7 +746,7 @@ ALTER TABLE `pemeriksaanbalita`
   ADD KEY `penyuluhanbalita_id` (`penyuluhanbalita_id`);
 
 --
--- Indeks untuk tabel `pemeriksaanibu`
+-- Indexes for table `pemeriksaanibu`
 --
 ALTER TABLE `pemeriksaanibu`
   ADD PRIMARY KEY (`id`),
@@ -759,19 +755,19 @@ ALTER TABLE `pemeriksaanibu`
   ADD KEY `penyuluhanibu_id` (`penyuluhanibu_id`);
 
 --
--- Indeks untuk tabel `penyuluhanbalita`
+-- Indexes for table `penyuluhanbalita`
 --
 ALTER TABLE `penyuluhanbalita`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indeks untuk tabel `penyuluhanibu`
+-- Indexes for table `penyuluhanibu`
 --
 ALTER TABLE `penyuluhanibu`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indeks untuk tabel `prescription`
+-- Indexes for table `prescription`
 --
 ALTER TABLE `prescription`
   ADD PRIMARY KEY (`id`),
@@ -779,25 +775,25 @@ ALTER TABLE `prescription`
   ADD KEY `user_id` (`user_id`);
 
 --
--- Indeks untuk tabel `report`
+-- Indexes for table `report`
 --
 ALTER TABLE `report`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indeks untuk tabel `rule`
+-- Indexes for table `rule`
 --
 ALTER TABLE `rule`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indeks untuk tabel `specialist`
+-- Indexes for table `specialist`
 --
 ALTER TABLE `specialist`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indeks untuk tabel `users`
+-- Indexes for table `users`
 --
 ALTER TABLE `users`
   ADD PRIMARY KEY (`id`),
@@ -807,7 +803,7 @@ ALTER TABLE `users`
   ADD UNIQUE KEY `uc_remember_selector` (`remember_selector`);
 
 --
--- Indeks untuk tabel `users_groups`
+-- Indexes for table `users_groups`
 --
 ALTER TABLE `users_groups`
   ADD PRIMARY KEY (`id`),
@@ -816,171 +812,144 @@ ALTER TABLE `users_groups`
   ADD KEY `fk_users_groups_groups1_idx` (`group_id`);
 
 --
--- AUTO_INCREMENT untuk tabel yang dibuang
+-- AUTO_INCREMENT for dumped tables
 --
 
 --
--- AUTO_INCREMENT untuk tabel `balita`
+-- AUTO_INCREMENT for table `balita`
 --
 ALTER TABLE `balita`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
-
 --
--- AUTO_INCREMENT untuk tabel `category`
+-- AUTO_INCREMENT for table `category`
 --
 ALTER TABLE `category`
   MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
-
 --
--- AUTO_INCREMENT untuk tabel `doctor_specialist`
+-- AUTO_INCREMENT for table `doctor_specialist`
 --
 ALTER TABLE `doctor_specialist`
   MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
-
 --
--- AUTO_INCREMENT untuk tabel `groups`
+-- AUTO_INCREMENT for table `groups`
 --
 ALTER TABLE `groups`
   MODIFY `id` mediumint(8) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
-
 --
--- AUTO_INCREMENT untuk tabel `ibuhamil`
+-- AUTO_INCREMENT for table `ibuhamil`
 --
 ALTER TABLE `ibuhamil`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
-
 --
--- AUTO_INCREMENT untuk tabel `imunisasibalita`
+-- AUTO_INCREMENT for table `imunisasibalita`
 --
 ALTER TABLE `imunisasibalita`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
-
 --
--- AUTO_INCREMENT untuk tabel `imunisasiibu`
+-- AUTO_INCREMENT for table `imunisasiibu`
 --
 ALTER TABLE `imunisasiibu`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
-
 --
--- AUTO_INCREMENT untuk tabel `item`
+-- AUTO_INCREMENT for table `item`
 --
 ALTER TABLE `item`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
-
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
 --
--- AUTO_INCREMENT untuk tabel `jadwalbalita`
+-- AUTO_INCREMENT for table `jadwalbalita`
 --
 ALTER TABLE `jadwalbalita`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
-
 --
--- AUTO_INCREMENT untuk tabel `jadwalibu`
+-- AUTO_INCREMENT for table `jadwalibu`
 --
 ALTER TABLE `jadwalibu`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
-
 --
--- AUTO_INCREMENT untuk tabel `jeniskegiatan`
+-- AUTO_INCREMENT for table `jeniskegiatan`
 --
 ALTER TABLE `jeniskegiatan`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
-
 --
--- AUTO_INCREMENT untuk tabel `jk`
+-- AUTO_INCREMENT for table `jk`
 --
 ALTER TABLE `jk`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
-
 --
--- AUTO_INCREMENT untuk tabel `laporan`
+-- AUTO_INCREMENT for table `laporan`
 --
 ALTER TABLE `laporan`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
-
 --
--- AUTO_INCREMENT untuk tabel `login_attempts`
+-- AUTO_INCREMENT for table `login_attempts`
 --
 ALTER TABLE `login_attempts`
-  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
-
+  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT;
 --
--- AUTO_INCREMENT untuk tabel `medicine`
+-- AUTO_INCREMENT for table `medicine`
 --
 ALTER TABLE `medicine`
   MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
-
 --
--- AUTO_INCREMENT untuk tabel `menus`
+-- AUTO_INCREMENT for table `menus`
 --
 ALTER TABLE `menus`
   MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=152;
-
 --
--- AUTO_INCREMENT untuk tabel `patient`
+-- AUTO_INCREMENT for table `patient`
 --
 ALTER TABLE `patient`
   MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
-
 --
--- AUTO_INCREMENT untuk tabel `patient_group`
+-- AUTO_INCREMENT for table `patient_group`
 --
 ALTER TABLE `patient_group`
   MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
-
 --
--- AUTO_INCREMENT untuk tabel `pemeriksaanbalita`
+-- AUTO_INCREMENT for table `pemeriksaanbalita`
 --
 ALTER TABLE `pemeriksaanbalita`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
-
 --
--- AUTO_INCREMENT untuk tabel `pemeriksaanibu`
+-- AUTO_INCREMENT for table `pemeriksaanibu`
 --
 ALTER TABLE `pemeriksaanibu`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
-
 --
--- AUTO_INCREMENT untuk tabel `penyuluhanbalita`
+-- AUTO_INCREMENT for table `penyuluhanbalita`
 --
 ALTER TABLE `penyuluhanbalita`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
-
 --
--- AUTO_INCREMENT untuk tabel `penyuluhanibu`
+-- AUTO_INCREMENT for table `penyuluhanibu`
 --
 ALTER TABLE `penyuluhanibu`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
-
 --
--- AUTO_INCREMENT untuk tabel `prescription`
+-- AUTO_INCREMENT for table `prescription`
 --
 ALTER TABLE `prescription`
   MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
-
 --
--- AUTO_INCREMENT untuk tabel `rule`
+-- AUTO_INCREMENT for table `rule`
 --
 ALTER TABLE `rule`
   MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
-
 --
--- AUTO_INCREMENT untuk tabel `specialist`
+-- AUTO_INCREMENT for table `specialist`
 --
 ALTER TABLE `specialist`
   MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
-
 --
--- AUTO_INCREMENT untuk tabel `users`
+-- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
   MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
-
 --
--- AUTO_INCREMENT untuk tabel `users_groups`
+-- AUTO_INCREMENT for table `users_groups`
 --
 ALTER TABLE `users_groups`
   MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=44;
-
 --
 -- Ketidakleluasaan untuk tabel pelimpahan (Dumped Tables)
 --
@@ -1041,7 +1010,6 @@ ALTER TABLE `prescription`
 ALTER TABLE `users_groups`
   ADD CONSTRAINT `fk_users_groups_groups1` FOREIGN KEY (`group_id`) REFERENCES `groups` (`id`) ON DELETE CASCADE ON UPDATE NO ACTION,
   ADD CONSTRAINT `fk_users_groups_users1` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON DELETE CASCADE ON UPDATE NO ACTION;
-COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
